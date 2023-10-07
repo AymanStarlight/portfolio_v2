@@ -13,7 +13,8 @@ export default {
         'secondary-light' : "#f6f0d9",
       },
       fontFamily: {
-        'manrope' : ['Manrope', 'sans-serif']
+        'manrope' : ['Manrope', 'sans-serif'],
+        'damn' : ['Damn', 'sans-serif']
       }
     },
   },

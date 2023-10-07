@@ -1,9 +1,10 @@
-import ProfilePic from "../assets/main.jpg";
-import "../styles/Hero.scss";
+import ProfilePic from "../../assets/main.jpg";
+import "../../styles/Hero.scss";
+import Banner from "./Banner";
 
 function Hero() {
 	return (
-		<div className="px-14 pt-8 min-h-screen">
+		<div className="px-14 pt-8">
 			<section className="nav flex justify-between">
 				<a className="text-secondary-light font-medium text-lg">
 					{"{Portfolio}"}
@@ -46,6 +47,7 @@ function Hero() {
 					{"{Reviews}"}
 				</a>
 			</section>
+			<Banner/>
 		</div>
 	);
 }
