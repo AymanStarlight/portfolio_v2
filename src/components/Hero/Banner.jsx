@@ -17,7 +17,6 @@ function Banner() {
 					className="bg-primary-light w-screen h-20 relative left-[-3.5rem] bottom-[170px] rounded-t-full "
 					style={{ boxShadow: "0px -55px 122px 35px rgba(14,14,14,0.70)" }}
 				></div>
-				<div className="bg-primary-light w-screen h-screen relative left-[-3.5rem] bottom-[170px] "></div>
 			</div>
 		</div>
 	);

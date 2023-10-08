@@ -17,7 +17,7 @@ function Hero() {
 					<div className="w-[500px] flex flex-col items-center">
 						<img
 							src={ProfilePic}
-							className="w-32 grayscale rounded-3xl"
+							className="w-32 grayscale rounded-3xl contrast-[1.1]"
 							alt="Profile Picture"
 						/>
 						<p className="text-primary-light font-extralight text-center text-[20px] w-80 mt-8">

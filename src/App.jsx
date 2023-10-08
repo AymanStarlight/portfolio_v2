@@ -2,6 +2,7 @@ import Lenis from "@studio-freight/lenis";
 import "./App.css";
 import Hero from "./components/Hero/Hero";
 import { useEffect } from "react";
+import Portfolio from "./components/Portfolio/Portfolio";
 
 function App() {
 	useEffect(() => {
@@ -30,6 +31,7 @@ function App() {
 	return (
 		<div>
 			<Hero />
+			<Portfolio/>
 		</div>
 	);
 }

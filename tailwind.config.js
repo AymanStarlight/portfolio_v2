@@ -9,7 +9,7 @@ export default {
       colors: {
         'primary-dark' : "#0e0e0e",
         'primary-light' : "#e2dfd9",
-        'secondary-dark' : "#5e5d5a",
+        'secondary-dark' : "#454543",
         'secondary-light' : "#f6f0d9",
       },
       fontFamily: {
