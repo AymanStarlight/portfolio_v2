@@ -12,12 +12,11 @@ function Portfolio() {
         </div>
         <div className="grow">
             <p className="text-primary-dark text-8xl font-semibold">Projects <span className="text-secondary-dark">Overview</span></p>
-            <div className="grid grid-cols-3 pt-14">
-                <Project name="Prompy" img={prompy}/>
-                <Project name="Prompy" img={prompy}/>
-                <Project name="Prompy" img={prompy}/>
-                <Project name="Prompy" img={prompy}/>
-                <Project name="Prompy" img={prompy}/>
+            <div className="flex flex-col gap-16 mt-12">
+                <Project name="Prompy" img={prompy} tech="Next.js, React, Node.js, MongoDB, TailwindCSS." desc="An AI prompting tool brewed to unleash the creative powers of AI Platforms. Discover, Create and share the best prompts." />
+                <Project name="Prompy (Laravel)" img={prompy} tech="PHP, Laravel, Livewire, TailwindCSS, MySQL." desc="An AI prompting tool brewed to unleash the creative powers of AI Platforms. Discover, Create and share the best prompts." />
+                <Project name="Palettium" img={prompy} tech="React, VanillaJS, TailwindCSS." desc="A Feature-Rich Single Page Application for Creating, Viewing and Sharing Color Palettes." />
+                <Project name="Portfolio V1" img={prompy} tech="React, VanillaJS, SASS." desc="A personal portfolio to showcase my projects & my skills." />
             </div>
         </div>
     </div>
