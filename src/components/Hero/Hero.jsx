@@ -6,14 +6,14 @@ function Hero() {
 	return (
 		<div className="px-14 pt-8">
 			<section className="nav flex justify-between">
-				<a className="text-secondary-light font-medium text-lg">
+				<a className="text-secondary-light font-medium text-lg h-max">
 					{"{Portfolio}"}
 				</a>
-				<a className="text-secondary-light font-medium text-lg">
+				<a className="text-secondary-light font-medium text-lg h-max">
 					{"{Services}"}
 				</a>
 				<div className="flex">
-					<a className="text-secondary-light font-medium text-lg">{"{En}"}</a>
+					<a className="text-secondary-light font-medium text-lg h-max">{"{En}"}</a>
 					<div className="w-[500px] flex flex-col items-center">
 						<img
 							src={ProfilePic}
@@ -36,14 +36,14 @@ function Hero() {
 							</div>
 						</div>
 					</div>
-					<a className="text-secondary-light font-manrope font-medium text-lg">
+					<a className="text-secondary-light font-manrope font-medium text-lg h-max">
 						{"{Fr}"}
 					</a>
 				</div>
-				<a className="text-secondary-light font-manrope font-medium text-lg">
+				<a className="text-secondary-light font-manrope font-medium text-lg h-max">
 					{"{Stages}"}
 				</a>
-				<a className="text-secondary-light font-manrope font-medium text-lg">
+				<a className="text-secondary-light font-manrope font-medium text-lg h-max">
 					{"{Reviews}"}
 				</a>
 			</section>
