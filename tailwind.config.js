@@ -15,6 +15,9 @@ export default {
       fontFamily: {
         'manrope' : ['Manrope', 'sans-serif'],
         'damn' : ['Damn', 'sans-serif']
+      },
+      transitionTimingFunction: {
+        'south': 'cubic-bezier(0.785, 0.135, 0.150, 0.860)',
       }
     },
   },
