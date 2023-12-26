@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@studio-freight/lenis": "^1.0.26",
     "animated-cursor": "^1.2.0",
     "framer-motion": "^10.16.4",

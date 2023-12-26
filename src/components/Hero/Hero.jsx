@@ -33,11 +33,11 @@ function Hero() {
 							passionate about creating unique and memorable experiences.
 						</p>
 						<div className="flex gap-8 mt-16">
-							<div className="flex gap-3 justify-center items-center text-base font-bold text-secondary-light border border-secondary-light rounded-full px-6 py-3">
+							<div className="primary-dark-button">
 								<button >My Resume</button>
 								<div className="circle-white pulse-white"></div>
 							</div>
-							<div className="flex gap-3 justify-center items-center text-base font-bold text-primary-dark border border-secondary-light bg-primary-light rounded-full px-6 py-3">
+							<div className="primary-light-button">
 								<button onClick={() => setShowContact(true)}>Contact Me</button>
 								<div className="circle-black pulse-black"></div>
 							</div>

@@ -9,6 +9,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .cinput {
+    @apply text-primary-light text-lg bg-primary-dark py-2 px-1 outline-none border-b-2 border-secondary-dark focus:border-primary-light transition-all duration-100 placeholder:text-primary-light/50 placeholder:font-thin ;
+  }
+  .primary-light-button {
+    @apply flex gap-3 justify-center items-center text-base font-bold text-primary-dark border border-secondary-light bg-primary-light rounded-full px-6 py-3;
+  }
+  .primary-dark-button {
+    @apply flex gap-3 justify-center items-center text-base font-bold text-secondary-light border border-secondary-light rounded-full px-6 py-3;
+  }
+}
+
 html.lenis {
   height: auto;
 }
