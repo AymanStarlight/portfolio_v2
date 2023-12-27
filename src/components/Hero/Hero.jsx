@@ -1,5 +1,4 @@
 import ProfilePic from "../../assets/main.jpg";
-import "../../styles/Hero.scss";
 import Banner from "./Banner";
 import ContactModal from "../ContactModal";
 import { useState } from "react";
@@ -24,7 +23,7 @@ function Hero() {
 					<div className="w-[500px] flex flex-col items-center">
 						<img
 							src={ProfilePic}
-							className="w-32 grayscale rounded-3xl contrast-[1.1]"
+							className="w-32 rounded-3xl"
 							alt="Profile Picture"
 						/>
 						<p className="text-primary-light font-extralight text-center text-[20px] w-80 mt-8">
@@ -34,11 +33,11 @@ function Hero() {
 						</p>
 						<div className="flex gap-8 mt-16">
 							<div className="primary-dark-button">
-								<button >My Resume</button>
+								<a href="https://drive.google.com/uc?id=1O0MiC3plsyVAG-ghBx8Jb3WNE1KDd2pz&export=download" >My Resume</a>
 								<div className="circle-white pulse-white"></div>
 							</div>
-							<div className="primary-light-button">
-								<button onClick={() => setShowContact(true)}>Contact Me</button>
+							<div className="primary-light-button" onClick={() => setShowContact(true)}>
+								<button>Contact Me</button>
 								<div className="circle-black pulse-black"></div>
 							</div>
 						</div>

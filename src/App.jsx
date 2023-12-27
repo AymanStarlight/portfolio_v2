@@ -4,6 +4,7 @@ import "./App.css";
 import Hero from "./components/Hero/Hero";
 import { useEffect, useState } from "react";
 import Portfolio from "./components/Portfolio/Portfolio";
+import Footer from "./components/Footer";
 
 function App() {
 	const [cordinates, setCordinates] = useState({});
@@ -39,7 +40,7 @@ function App() {
 				mixBlendMode: "exclusion",
 			},
 			size: { inner: 8, outer: 40 },
-			hoverScale: { inner: 1, outer: 1.6 }
+			hoverScale: { inner: 1, outer: 1.7 }
 		};
 
 		const ac = AnimatedCursor(blendOpts);
@@ -47,9 +48,10 @@ function App() {
 	}, []);
 
 	return (
-		<div>
+		<div className="h-max">
 			<Hero />
 			<Portfolio />
+			<Footer />
 			<div id="cursor">
 				<div id="cursor-outer"></div>
 				<div id="cursor-inner"></div>
