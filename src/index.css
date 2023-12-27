@@ -194,3 +194,14 @@ select {
 	backdrop-filter: blur(20px);
 	-webkit-backdrop-filter: blur(20px);
 }
+
+@media (max-width: 1400px) {
+	.content {
+		display: none;
+	}
+}
+@media (min-width: 1400px) {
+	.mobile {
+		display: none;
+	}
+}

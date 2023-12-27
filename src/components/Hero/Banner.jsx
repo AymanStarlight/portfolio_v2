@@ -1,14 +1,13 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 
 function Banner() {
-
-	let {scrollY} = useScroll();
-	let y = useTransform(scrollY, [0, 1200], ['0%', '55%']);
+	let { scrollY } = useScroll();
+	let y = useTransform(scrollY, [0, 1200], ["0%", "55%"]);
 
 	return (
 		<div>
 			<motion.div style={{ y }} className="mt-24">
-				<h1 className="leading-[610px] text-[472px] text-center bg-center text-primary-light font-damn">
+				<h1 className="leading-[610px] text-[24vw] text-center bg-center text-primary-light font-damn">
 					AYMAN LAAGUID
 				</h1>
 			</motion.div>

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -15,7 +15,9 @@
     "animated-cursor": "^1.2.0",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-loading-overlay-ts": "^2.0.2",
+    "react-spinners": "^0.13.8"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
