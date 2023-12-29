@@ -7,6 +7,7 @@ import Portfolio from "./components/Portfolio/Portfolio";
 import Footer from "./components/Footer";
 import LoadingOverlay from "react-loading-overlay-ts";
 import BarLoader from "react-spinners/BarLoader";
+import NavBar from "./components/NavBar";
 
 function App() {
 	const [active, setActive] = useState(true);
@@ -77,6 +78,7 @@ function App() {
 						active ? "h-screen overflow-hidden content" : "h-max content"
 					}
 				>
+					<NavBar />
 					<Hero />
 					<Portfolio />
 					<Footer />

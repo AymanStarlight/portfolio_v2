@@ -16,7 +16,7 @@ function Footer() {
 						<a href="https://github.com/AymanStarlight" className="font-medium text-lg h-max">{"{Github}"}</a>
 					</div>
 					<div className="w-6/12 flex flex-col items-center gap-10">
-						<p className="text-primary-dark text-8xl font-semibold text-center">
+						<p className="text-primary-dark text-7xl font-semibold text-center">
 							<span className="text-secondary-dark">Let&#39;s</span> create
 							<br /> something cool?
 						</p>
