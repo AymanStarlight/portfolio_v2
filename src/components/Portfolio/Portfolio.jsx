@@ -1,7 +1,4 @@
-import Prompy1 from "../../assets/Prompy/Prompy-1.png";
-import Prompy2 from "../../assets/Prompy/Prompy-2.png";
-import Prompy3 from "../../assets/Prompy/Prompy-3.png";
-import Prompy4 from "../../assets/Prompy/Prompy-4.png";
+import { useContext, useState } from "react";
 import LGMS1 from "../../assets/LGMS/LGMS-1.png";
 import LGMS2 from "../../assets/LGMS/LGMS-2.png";
 import LGMS3 from "../../assets/LGMS/LGMS-3.png";
@@ -10,11 +7,13 @@ import Palettium1 from "../../assets/Palettium/Palettium-1.png";
 import Palettium2 from "../../assets/Palettium/Palettium-2.png";
 import Palettium3 from "../../assets/Palettium/Palettium-3.png";
 import PortfolioV1 from "../../assets/PortfolioV1.png";
+import Prompy1 from "../../assets/Prompy/Prompy-1.png";
+import Prompy2 from "../../assets/Prompy/Prompy-2.png";
+import Prompy3 from "../../assets/Prompy/Prompy-3.png";
+import Prompy4 from "../../assets/Prompy/Prompy-4.png";
 import Project from "./Project";
-import { useState } from "react";
 import ProjectModal from "./ProjectModal";
-import { useContext } from "react";
-import NavContext from "../../contexts/NavContext";
+import GState from "../../contexts/GState";
 
 function Portfolio() {
 	const [project, setProject] = useState({
@@ -26,11 +25,15 @@ function Portfolio() {
 			img: "",
 		},
 	});
-	let { setNavShow } = useContext(NavContext);
+	let { nav } = useContext(GState);
 
 	return (
 		<>
-			<ProjectModal project={project} setProject={setProject} setNavShow={setNavShow}/>
+			<ProjectModal
+				project={project}
+				setProject={setProject}
+				setNavShow={nav.setShowNav}
+			/>
 			<div className="bg-primary-light w-screen relative bottom-[170px] flex font-manrope px-14 py-40">
 				<div>
 					<p className="font-medium text-lg pr-40 pt-4">{"{Portfolio}"}</p>
@@ -41,7 +44,7 @@ function Portfolio() {
 					</p>
 					<div className="flex flex-col gap-16 mt-12">
 						<Project
-							navShow={setNavShow}
+							navShow={nav.setShowNav}
 							show={setProject}
 							name="LGMS"
 							img={LGMS1}
@@ -52,7 +55,7 @@ function Portfolio() {
 							glink="https://github.com/saidlionsgeeek/lionsgeek_management"
 						/>
 						<Project
-							navShow={setNavShow}
+							navShow={nav.setShowNav}
 							show={setProject}
 							name="Prompy"
 							img={Prompy1}
@@ -63,7 +66,7 @@ function Portfolio() {
 							glink="https://github.com/AymanStarlight/prompy"
 						/>
 						<Project
-							navShow={setNavShow}
+							navShow={nav.setShowNav}
 							show={setProject}
 							name="Prompy (Laravel)"
 							img={Prompy1}
@@ -74,7 +77,7 @@ function Portfolio() {
 							glink="https://github.com/AymanStarlight/prompy-laravel"
 						/>
 						<Project
-							navShow={setNavShow}
+							navShow={nav.setShowNav}
 							show={setProject}
 							name="Palettium"
 							img={Palettium1}
@@ -85,7 +88,7 @@ function Portfolio() {
 							glink="https://github.com/AymanStarlight/Palettium"
 						/>
 						<Project
-							navShow={setNavShow}
+							navShow={nav.setShowNav}
 							show={setProject}
 							name="Portfolio V1"
 							img={PortfolioV1}

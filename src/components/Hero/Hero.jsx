@@ -1,14 +1,14 @@
+import { useContext } from "react";
 import ProfilePic from "../../assets/main.jpg";
 import Banner from "./Banner";
-import ContactModal from "../ContactModal";
-import { useState } from "react";
+import GState from "../../contexts/GState";
 
 function Hero() {
-	const [showContact, setShowContact] = useState(false);
+
+	const { contact, nav } = useContext(GState)
 
 	return (
 		<div className="px-14 pt-8">
-			<ContactModal show={showContact} setShow={setShowContact} />
 			<section className="nav flex justify-between">
 				<a className="text-secondary-light font-medium text-lg h-max">
 					{"{Portfolio}"}
@@ -36,7 +36,7 @@ function Hero() {
 								<a href="https://drive.google.com/uc?id=1O0MiC3plsyVAG-ghBx8Jb3WNE1KDd2pz&export=download" >My Resume</a>
 								<div className="circle-white pulse-white"></div>
 							</div>
-							<div className="primary-light-button" onClick={() => setShowContact(true)}>
+							<div className="primary-light-button" onClick={() => {contact.setShowContact(true); nav.setShowNav({nav: false, hero: true})}}>
 								<button>Contact Me</button>
 								<div className="circle-black pulse-black"></div>
 							</div>

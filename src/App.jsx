@@ -1,18 +1,25 @@
-import AnimatedCursor from "animated-cursor";
 import Lenis from "@studio-freight/lenis";
-import "./App.css";
-import Hero from "./components/Hero/Hero";
+import AnimatedCursor from "animated-cursor";
 import { useEffect, useRef, useState } from "react";
-import Portfolio from "./components/Portfolio/Portfolio";
-import Footer from "./components/Footer";
 import LoadingOverlay from "react-loading-overlay-ts";
 import BarLoader from "react-spinners/BarLoader";
+import "./App.css";
+import Footer from "./components/Footer";
+import Hero from "./components/Hero/Hero";
 import NavBar from "./components/NavBar";
-import NavContext from "./contexts/NavContext";
+import Portfolio from "./components/Portfolio/Portfolio";
+import GState from "./contexts/GState";
+import ContactModal from "./components/ContactModal";
 
 function App() {
 	const [active, setActive] = useState(true);
-	const [navShow, setNavShow] = useState(false);
+	const [showNav, setShowNav] = useState({nav: false, hero: true});
+	const [showContact, setShowContact] = useState(false);
+
+	const globalState = {
+		nav: { showNav, setShowNav },
+		contact: { showContact, setShowContact },
+	};
 
 	const bodyRef = useRef();
 
@@ -23,9 +30,9 @@ function App() {
 					// Add or remove the animation class
 					// According to whether it's in or out of the viewport
 					if (entry.isIntersecting) {
-						setNavShow(true)
+						setShowNav({nav: true, hero: false});
 					} else {
-						setNavShow(false)
+						setShowNav({nav: false, hero: true});
 					}
 				});
 			},
@@ -41,8 +48,6 @@ function App() {
 			}
 		};
 	}, []);
-
-	console.log(navShow)
 
 	useEffect(() => {
 		const lenis = new Lenis({
@@ -110,14 +115,15 @@ function App() {
 						active ? "h-screen overflow-hidden content" : "h-max content"
 					}
 				>
-					<NavContext.Provider value={{ navShow, setNavShow }}>
-						<NavBar show={navShow} />
+					<GState.Provider value={globalState}>
+						<ContactModal />
+						<NavBar show={showNav.nav && !showNav.hero} />
 						<Hero />
 						<div ref={bodyRef}>
 							<Portfolio />
 						</div>
 						<Footer />
-					</NavContext.Provider>
+					</GState.Provider>
 				</div>
 				<div className="mobile h-1/2 bg-primary-dark flex flex-col justify-center items-center gap-4 text-primary-light font-manrope mt-28">
 					<svg

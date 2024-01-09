@@ -1,4 +1,8 @@
-function NavBar({ setShowContact, show }) {
+import { useContext } from "react";
+import GState from "../contexts/GState";
+
+function NavBar({ show }) {
+	const { contact, nav } = useContext(GState)
 	let styles = `fixed bottom-0 m-[0 auto] left-0 right-0 z-40 flex justify-center mb-8 transition-all duration-400 ${show ? '' : 'opacity-0'} `
 	return (
 		<div className={styles}>
@@ -16,7 +20,7 @@ function NavBar({ setShowContact, show }) {
 				</a>
 				<div
 					className="primary-light-button"
-					onClick={() => setShowContact(true)}
+					onClick={() => {contact.setShowContact(true); nav.setShowNav({nav: false, hero: false})}}
 				>
 					<button>Order a website </button>
 					<div className="circle-black pulse-black"></div>

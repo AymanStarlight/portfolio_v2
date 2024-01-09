@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import GState from "../contexts/GState";
 
 const backdrop = {
 	visible: { opacity: 1 },
@@ -21,9 +22,11 @@ const modal = {
 	},
 };
 
-function ContactModal({ show, setShow }) {
+function ContactModal() {
 
 	const [loading, setLoading] = useState(false)
+
+	const { contact, nav } = useContext(GState)
 
 	const form = useRef();
 
@@ -52,7 +55,7 @@ function ContactModal({ show, setShow }) {
 
 	return (
 		<AnimatePresence mode="wait">
-			{show && (
+			{contact.showContact && (
 				<motion.div
 					className="backdrop fixed top-0 left-0 w-full h-full bg-white/30 backdrop-blur-sm z-10 flex justify-center items-center"
 					variants={backdrop}
@@ -60,7 +63,7 @@ function ContactModal({ show, setShow }) {
 					animate="visible"
 					exit="hidden"
 					onClick={(e) => {
-						if (e.target === e.currentTarget) setShow(false);
+						if (e.target === e.currentTarget) {contact.setShowContact(false); nav.setShowNav({...nav.showNav, nav: true})}
 					}}
 				>
 					<motion.div

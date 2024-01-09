@@ -29,7 +29,7 @@ function ProjectModal({ project, setProject, setNavShow }) {
 					animate="visible"
 					exit="hidden"
 					onClick={(e) => {
-						if (e.target === e.currentTarget) {setProject({ show: false }); setNavShow(true)}
+						if (e.target === e.currentTarget) {setProject({ show: false }); setNavShow({nav: true, hero: false})}
 					}}
 				>
 					<motion.div

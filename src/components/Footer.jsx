@@ -1,14 +1,13 @@
-import { useState } from "react";
+import { useContext } from "react";
 import ProfilePic from "../assets/main.jpg";
-import ContactModal from "./ContactModal";
+import GState from "../contexts/GState";
 
 function Footer() {
 
-	const [showContact, setShowContact] = useState(false);
+	const { contact, nav } = useContext(GState)
 
 	return (
 		<>
-			<ContactModal show={showContact} setShow={setShowContact} />
 			<div className="bg-primary-light w-screen h-max relative bottom-[170px] px-14">
 				<div className="flex justify-between items-stretch font-manrope">
 					<div className="w-3/12 text-primary-dark flex justify-between items-end pb-3">
@@ -25,7 +24,7 @@ function Footer() {
 							className="w-44 rounded-3xl"
 							alt="Profile Picture"
 						/>
-						<div className="primary-light-button border-primary-dark mx-32" onClick={() => setShowContact(true)}>
+						<div className="primary-light-button border-primary-dark mx-32" onClick={() => {contact.setShowContact(true); nav.setShowNav({nav: false, hero: false})}}>
 							<button>Order a website </button>
 							<div className="circle-black pulse-black"></div>
 						</div>
