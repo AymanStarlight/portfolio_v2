@@ -23,16 +23,16 @@ const modal = {
 };
 
 function ContactModal() {
+	const [loading, setLoading] = useState(false);
 
-	const [loading, setLoading] = useState(false)
-
-	const { contact, nav } = useContext(GState)
+	const { contact, nav } = useContext(GState);
 
 	const form = useRef();
 
 	const sendEmail = (e) => {
 		e.preventDefault();
 
+		setLoading(true);
 		emailjs
 			.sendForm(
 				import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -42,9 +42,9 @@ function ContactModal() {
 			)
 			.then(
 				(result) => {
-					console.log(result)
+					console.log(result);
 					alert("You email has been sent successfuly!");
-					setLoading(false)
+					setLoading(false);
 					form.current.reset();
 				},
 				(error) => {
@@ -63,7 +63,10 @@ function ContactModal() {
 					animate="visible"
 					exit="hidden"
 					onClick={(e) => {
-						if (e.target === e.currentTarget) {contact.setShowContact(false); nav.setShowNav({...nav.showNav, nav: true})}
+						if (e.target === e.currentTarget) {
+							contact.setShowContact(false);
+							nav.setShowNav({ ...nav.showNav, nav: true });
+						}
 					}}
 				>
 					<motion.div
@@ -98,7 +101,11 @@ function ContactModal() {
 									className="cinput"
 									rows={4}
 								/>
-								<button type="submit" className="primary-light-button" onClick={() => setLoading(true)} disabled={loading}>
+								<button
+									type="submit"
+									className="primary-light-button"
+									disabled={loading}
+								>
 									{loading ? "Sending..." : "Submit"}
 								</button>
 							</form>
