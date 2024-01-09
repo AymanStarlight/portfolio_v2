@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 
-function Project({ name, img, tech, desc, bdesc, link, glink, show }) {
+function Project({ name, img, tech, desc, bdesc, link, glink, show, navShow }) {
 	const handleClick = () => {
 		show({
 			show: true,
 			info: { name, img, tech, desc, bdesc, link, glink },
 		});
+		navShow(false)
 	};
 
 	return (

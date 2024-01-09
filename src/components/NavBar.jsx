@@ -1,6 +1,7 @@
-function NavBar({ setShowContact }) {
+function NavBar({ setShowContact, show }) {
+	let styles = `fixed bottom-0 m-[0 auto] left-0 right-0 z-40 flex justify-center mb-8 transition-all duration-400 ${show ? '' : 'opacity-0'} `
 	return (
-		<div className="fixed bottom-0 m-[0 auto] left-0 right-0 z-40 flex justify-center mb-8">
+		<div className={styles}>
 			<div className="text-secondary-light flex justify-between items-center gap-16 font-manrope glass-bg w-max py-3 px-8 rounded-full">
 				<a
                     href="#"

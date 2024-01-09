@@ -18,7 +18,7 @@ const modal = {
 	},
 };
 
-function ProjectModal({ project, setProject }) {
+function ProjectModal({ project, setProject, setNavShow }) {
 	return (
 		<AnimatePresence mode="wait">
 			{project.show && (
@@ -29,7 +29,7 @@ function ProjectModal({ project, setProject }) {
 					animate="visible"
 					exit="hidden"
 					onClick={(e) => {
-						if (e.target === e.currentTarget) setProject({ show: false });
+						if (e.target === e.currentTarget) {setProject({ show: false }); setNavShow(true)}
 					}}
 				>
 					<motion.div

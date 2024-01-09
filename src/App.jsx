@@ -2,15 +2,47 @@ import AnimatedCursor from "animated-cursor";
 import Lenis from "@studio-freight/lenis";
 import "./App.css";
 import Hero from "./components/Hero/Hero";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Footer from "./components/Footer";
 import LoadingOverlay from "react-loading-overlay-ts";
 import BarLoader from "react-spinners/BarLoader";
 import NavBar from "./components/NavBar";
+import NavContext from "./contexts/NavContext";
 
 function App() {
 	const [active, setActive] = useState(true);
+	const [navShow, setNavShow] = useState(false);
+
+	const bodyRef = useRef();
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					// Add or remove the animation class
+					// According to whether it's in or out of the viewport
+					if (entry.isIntersecting) {
+						setNavShow(true)
+					} else {
+						setNavShow(false)
+					}
+				});
+			},
+			{ threshold: 0.05 } // Adjust the threshold as needed
+		);
+		if (bodyRef.current) {
+			observer.observe(bodyRef.current);
+		}
+		// Cleanup the observer when the component unmounts
+		return () => {
+			if (bodyRef.current) {
+				observer.unobserve(bodyRef.current);
+			}
+		};
+	}, []);
+
+	console.log(navShow)
 
 	useEffect(() => {
 		const lenis = new Lenis({
@@ -78,10 +110,14 @@ function App() {
 						active ? "h-screen overflow-hidden content" : "h-max content"
 					}
 				>
-					<NavBar />
-					<Hero />
-					<Portfolio />
-					<Footer />
+					<NavContext.Provider value={{ navShow, setNavShow }}>
+						<NavBar show={navShow} />
+						<Hero />
+						<div ref={bodyRef}>
+							<Portfolio />
+						</div>
+						<Footer />
+					</NavContext.Provider>
 				</div>
 				<div className="mobile h-1/2 bg-primary-dark flex flex-col justify-center items-center gap-4 text-primary-light font-manrope mt-28">
 					<svg

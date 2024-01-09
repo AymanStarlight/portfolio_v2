@@ -13,6 +13,8 @@ import PortfolioV1 from "../../assets/PortfolioV1.png";
 import Project from "./Project";
 import { useState } from "react";
 import ProjectModal from "./ProjectModal";
+import { useContext } from "react";
+import NavContext from "../../contexts/NavContext";
 
 function Portfolio() {
 	const [project, setProject] = useState({
@@ -24,10 +26,11 @@ function Portfolio() {
 			img: "",
 		},
 	});
+	let { setNavShow } = useContext(NavContext);
 
 	return (
 		<>
-			<ProjectModal project={project} setProject={setProject} />
+			<ProjectModal project={project} setProject={setProject} setNavShow={setNavShow}/>
 			<div className="bg-primary-light w-screen relative bottom-[170px] flex font-manrope px-14 py-40">
 				<div>
 					<p className="font-medium text-lg pr-40 pt-4">{"{Portfolio}"}</p>
@@ -38,6 +41,7 @@ function Portfolio() {
 					</p>
 					<div className="flex flex-col gap-16 mt-12">
 						<Project
+							navShow={setNavShow}
 							show={setProject}
 							name="LGMS"
 							img={LGMS1}
@@ -48,6 +52,7 @@ function Portfolio() {
 							glink="https://github.com/saidlionsgeeek/lionsgeek_management"
 						/>
 						<Project
+							navShow={setNavShow}
 							show={setProject}
 							name="Prompy"
 							img={Prompy1}
@@ -58,6 +63,7 @@ function Portfolio() {
 							glink="https://github.com/AymanStarlight/prompy"
 						/>
 						<Project
+							navShow={setNavShow}
 							show={setProject}
 							name="Prompy (Laravel)"
 							img={Prompy1}
@@ -68,6 +74,7 @@ function Portfolio() {
 							glink="https://github.com/AymanStarlight/prompy-laravel"
 						/>
 						<Project
+							navShow={setNavShow}
 							show={setProject}
 							name="Palettium"
 							img={Palettium1}
@@ -78,6 +85,7 @@ function Portfolio() {
 							glink="https://github.com/AymanStarlight/Palettium"
 						/>
 						<Project
+							navShow={setNavShow}
 							show={setProject}
 							name="Portfolio V1"
 							img={PortfolioV1}
