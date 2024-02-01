@@ -42,13 +42,17 @@ function ContactModal() {
 			)
 			.then(
 				(result) => {
-					console.log(result);
-					alert("You email has been sent successfuly!");
+					alert("Your email has been sent successfuly!");
 					setLoading(false);
+					contact.setShowContact(false)
 					form.current.reset();
 				},
 				(error) => {
-					console.log(error.text);
+					alert("Email Servive is not available at the moment!");
+					setLoading(false);
+					contact.setShowContact(false)
+					form.current.reset();
+					console.log(error)
 				}
 			);
 	};

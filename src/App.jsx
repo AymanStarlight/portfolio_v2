@@ -27,8 +27,6 @@ function App() {
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
-					// Add or remove the animation class
-					// According to whether it's in or out of the viewport
 					if (entry.isIntersecting) {
 						setShowNav({nav: true, hero: false});
 					} else {
@@ -36,12 +34,11 @@ function App() {
 					}
 				});
 			},
-			{ threshold: 0.05 } // Adjust the threshold as needed
+			{ threshold: 0.05 } 
 		);
 		if (bodyRef.current) {
 			observer.observe(bodyRef.current);
 		}
-		// Cleanup the observer when the component unmounts
 		return () => {
 			if (bodyRef.current) {
 				observer.unobserve(bodyRef.current);

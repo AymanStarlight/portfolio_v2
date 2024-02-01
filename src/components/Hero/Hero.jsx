@@ -33,7 +33,7 @@ function Hero() {
 						</p>
 						<div className="flex gap-8 mt-16">
 							<div className="primary-dark-button">
-								<a href="https://drive.google.com/uc?id=1O0MiC3plsyVAG-ghBx8Jb3WNE1KDd2pz&export=download" >My Resume</a>
+								<a href="https://drive.google.com/uc?id=1gnrc2QrODm-Jb0PgySworH8PRFr1h1RW&export=download" >My Resume</a>
 								<div className="circle-white pulse-white"></div>
 							</div>
 							<div className="primary-light-button" onClick={() => {contact.setShowContact(true); nav.setShowNav({nav: false, hero: true})}}>
