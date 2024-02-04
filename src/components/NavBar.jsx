@@ -3,7 +3,7 @@ import GState from "../contexts/GState";
 
 function NavBar({ show }) {
 	const { contact, nav } = useContext(GState)
-	let styles = `fixed bottom-0 m-[0 auto] left-0 right-0 z-40 flex justify-center mb-8 transition-all duration-400 ${show ? '' : 'opacity-0'} `
+	let styles = `fixed bottom-0 m-[0 auto] left-0 right-0 z-30 flex justify-center mb-8 transition-all duration-400 ${show ? '' : 'opacity-0'} `
 	return (
 		<div className={styles}>
 			<div className="text-secondary-light flex justify-between items-center gap-16 font-manrope glass-bg w-max py-3 px-8 rounded-full">

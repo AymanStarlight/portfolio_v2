@@ -13,7 +13,7 @@ import ContactModal from "./components/ContactModal";
 
 function App() {
 	const [active, setActive] = useState(true);
-	const [showNav, setShowNav] = useState({nav: false, hero: true});
+	const [showNav, setShowNav] = useState({ nav: false, hero: true });
 	const [showContact, setShowContact] = useState(false);
 
 	const globalState = {
@@ -28,13 +28,13 @@ function App() {
 			(entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						setShowNav({nav: true, hero: false});
+						setShowNav({ nav: true, hero: false });
 					} else {
-						setShowNav({nav: false, hero: true});
+						setShowNav({ nav: false, hero: true });
 					}
 				});
 			},
-			{ threshold: 0.05 } 
+			{ threshold: 0.05 }
 		);
 		if (bodyRef.current) {
 			observer.observe(bodyRef.current);
@@ -146,8 +146,8 @@ function App() {
 					<p className="text-lg">Mobile Version: Coming Soon.</p>
 				</div>
 				<div id="cursor">
-					<div id="cursor-outer"></div>
-					<div id="cursor-inner"></div>
+					<div className="z-50" id="cursor-outer"></div>
+					<div className="z-50" id="cursor-inner"></div>
 				</div>
 			</LoadingOverlay>
 		</>
